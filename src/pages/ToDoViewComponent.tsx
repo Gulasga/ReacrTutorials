@@ -9,6 +9,7 @@ export interface ITodo {
     id: any;
     text: string;
     completed: false;
+    isEditing: boolean
 }
 
 export const ToDoViewComponent = ({
@@ -17,10 +18,9 @@ export const ToDoViewComponent = ({
     const [todos, setTodos] = useState<ITodo[]>([]);
 
     const addTodo = (todo: any) => {
-        debugger;
         setTodos([
             ...todos,
-            { id: uuidv4(), text: todo.text, completed: false },
+            { id: uuidv4(), text: todo.text, completed: false ,isEditing:false},
         ]);
     }
 
